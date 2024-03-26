@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;}
+  .loading {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 5px solid turquoise;
+  border-top: 5px solid transparent;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
