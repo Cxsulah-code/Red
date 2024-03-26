@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, Sans-Serif;
+  background-image: url('./myphoto.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.navbar {
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+.logo {
+  font-size: 32px;
+  color: #fff;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin: 0 14px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+.content {
+  margin-top: 120px;
+  color: #21f592;
+  font-size: 2rem;
+  font-style: italic;
+
+}
+
+.navbar-scrolled {
+  background-color: #000;
+}
