@@ -5,6 +5,7 @@ function appendToDisplay(input) {
 function clearDisplay() {
   display.value = "";
 }
+
 function calculate() {
   // eval stands for built in evaluate
   try {
@@ -14,3 +15,8 @@ function calculate() {
     display.value = "Error";
   }
 }
+/*function delete() {
+  for (input > 15; input--) {
+    display.value -= "";
+  }
+}*/
