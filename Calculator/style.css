@@ -15,7 +15,7 @@ body {
 #display {
   width: 100%;
   padding: 20px;
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: left;
   border: none;
   color: #fff;
@@ -28,13 +28,13 @@ body {
   padding: 25px;
 }
 button {
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  height: 70px;
+  width: 70px;
+  border-radius: 15px;
   border: none;
   background-color: dodgerblue;
   color: beige;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
 }
