@@ -1,4 +1,5 @@
-var w = innerWidth, h = innerHeight;
+var w = innerWidth
+var h = innerHeight;
 var v = Math.min(w, h), ctx;
 var rotationAngle = 0;
 

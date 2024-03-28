@@ -4,9 +4,13 @@
   <title>Canvas</title>
 </head>
 <body>
-  <canvas>hello</canvas>
+  <canvas>
+    <h1>hello </h1>
+  </canvas>
   <script>
-    var w = innerWidth, h = innerHeight;
+    import Math
+    var w = innerWidth;
+    var h = innerHeight;
     var v = Math.min(w, h), ctx;
     var rotationAngle = 0;
 
@@ -34,10 +38,10 @@
       function animate () {
         ctx.clearRect(0, 0, w, h);
         rotationAngle += 0.009;
-        for (var i = -n; i <=  n; i++) {
+        for (var i = -n; i <= n; i++) {
           var angle = Math.abs(i) * anglefract + rotationAngle;
           var radius = i / n;
-          if (radius != 0) {
+          if (radius !== 0) {
             radius /= Math.sqrt(Math.abs(radius));
           }
           radius *= 0.48 * v;
