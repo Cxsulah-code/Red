@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Animation</title>
+</head>
+<body bgcolor="black">
+  <canvas></canvas>
+  <script>
+    var can = document.querySelector("canvas");
+    var ctx = can.getContext('2d');
+    can.width = window.innerWidth;
+    can.height = window.innerHeight;
+    var no = new Array(850, 800, 550, 400, 545, 565, 595, 660, 665, 670, 680, 350, 250, 210, 220, 270, 275, 280, 285, 335, 350, 355, 360, 370, 385, 410, 420, 430, 440, 445, 450, 470, 510)
+
+    var t = 0;
+    var a = 0;
+    var color = 360 * Math.random();
+
+    function animate() {
+      a += 0.01;
+      ctx.beginPath();
+      var x = can.width / 2 + can.width / 2 * Math.cos(no[t] * a) * Math.sin(a);
+
+      var y = can.height / 2 + can.width / 2 * Math.sin(no[t] * a) * Math.sin(a);
+
+      ctx.strokeStyle = "hsl("+color+++ ",100%,50%)";
+      ctx.moveTo(can.width / 2, can.height / 2);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      if (a > 6.5) {
+        a = 0.01;
+        t = t + 1;
+        ctx.clearRect (0, 0, can.width, can.height);
+      }
+      if (t > 33) {
+        t = 0;
+      }
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
