@@ -39,4 +39,4 @@ function animate () {
   }
   requestAnimationFrame(animate);
 }
-requestAnimationFrame(animate);
+animate();
