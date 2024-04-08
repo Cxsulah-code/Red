@@ -1,0 +1,65 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #dff, #00f0ff4d);
+}
+.box {
+  height: 90px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  place-items: center;
+}
+
+#bubbles {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  outline: 1px black solid;
+  animation: in-out 2.5s infinite ease-in-out;
+  position: relative;
+}
+
+#bubbles:after {
+  content: "";
+  display: block;
+  z-index: 2;
+  height: 20px;
+  width: 20px;
+  background: #ffffff80;
+  border-radius: 50%;
+  transform: translate(4px, 3px);
+}
+#bubbles:nth-child(1) {
+  background: #f00f23;
+  animation-delay: 500ms;
+}
+
+#bubbles:nth-child(2) {
+  background: #ffa500;
+  animation-delay: 750ms;
+}
+
+#bubbles:nth-child(3) {
+  background: #f0ff63;
+  animation-delay: 1000ms;
+}
+
+#bubbles:nth-child(4) {
+  background: #00f533;
+  animation-delay: 1250ms;
+}
+
+#bubbles:nth-child(5) {
+  background: #066ff3;
+  animation-delay: 1.5s;
+}
+
+@keyframes in-out {
+  50% {
+    scale: 1.5;
+    transform: translate(0 45px);
+  }
+}
