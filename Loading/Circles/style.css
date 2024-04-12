@@ -1,0 +1,61 @@
+body {
+  background-color: #202830;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.container {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  isolation: isolate;
+  animation: spin 2.5s ease-in-out 0.5s forwards infinite;
+}
+.ring {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  mix-blend-mode: plus-lighter;
+
+}
+
+.ring-1 {
+  background-color: #f58004;
+  left: 0;
+}
+.ring-2 {
+  background-color: #4be053;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ring-3 {
+  background-color: #44bcf4;
+  right: 0;
+}
+
+@keyframes spin {
+  0% {
+    width: 130px;
+  }
+  25% {
+    width: 130px;
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 50px;
+    transform: rotate(360deg);
+  }
+  75% {
+    width: 50px;
+    transform: rotate(0deg);
+  }
+  100% {
+    width: 130px;
+  }
+}

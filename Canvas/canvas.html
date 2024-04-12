@@ -32,7 +32,7 @@
     }
     function animate() {
       ctx.clearRect(0, 0, cvs.width, cvs.height);
-      rotationAngle += 0.009;
+      rotationAngle += 0.05;
       for (var i = -n; i <= n; i++) {
         var angle = Math.abs(i) * anglefract + rotationAngle;
         var radius = i / n;
