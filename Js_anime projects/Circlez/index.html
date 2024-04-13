@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swing circles</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    window.onload = function() {
+      const cvs = document.querySelector("canvas");
+      const ctx = cvs.getContext("2d");
+      const dim = Math.min(innerWidth, innerHeight);
+      cvs.width = dim;
+      cvs.height = dim;
+
+      function animate() {
+        const t = Date.now() / 1000;
+        frame(cvs, ctx, t);
+        requestAnimationFrame(animate);
+      }
+    };
+    function frame(cvs, ctx, t) {
+      const W = cvs.width;
+
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, W, W);
+
+      const gradient = ctx.createLinearGradient(0, 0, W, W);
+      gradient.addColorStop(0, "red");
+      gradient.addColorStop(1, "blue");
+      ctx.fillStyle = gradient;
+      ctx.arc(W / 2, W / 2, W / 2, 0, 2 * Math.PI);
+
+      ctx.fill();
+      ctx.fillStyle = "white";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 2;
+
+      const N = 8;
+      for (let i = 0; i < N; i++) {
+        const a = i * Math.PI / N;
+        const r = 0.03 * W;
+
+        const p1x = W / 2 + (W / 2 - r) * Math.cos(a);
+        const p1y = W / 2 + (W / 2 - r) * Math.sin(a);
+        const p2x = W / 2 - (W / 2 - r) * Math.cos(a);
+        const p2y = W / 2 - (W / 2 - r) * Math.sin(a);
+
+        let b = 0.5 + 0.5 * Math.sin(t + a);
+        let cx = b * p1x + (1 - b) * p2x;
+        let cy = b * p1y + (1 - b) * p2y;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+
+        ctx.fill();
+
+        b = 0.5 + 0.5 * Math.sin(-t + a);
+
+        cx = b * p1x + (1 - b) * p2x;
+        cy = b * p1y + (1 - b) * p2y;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+      ctx.beginPath();
+      for (let i = 0; i < N; i++) {
+        const a = i * Math.PI / N;
+        const p1x = W / 2 + W / 2 * Math.cos(a);
+        const p1y = W / 2 + W / 2 * Math.sin(a);
+        const p2x = W / 2 - W / 2 * Math.cos(a);
+        const p2y = W / 2 - W / 2 * Math.sin(a);
+
+        ctx.moveTo(p1x, p1y);
+        ctx.lineTo(p2x, p2y);
+      }
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>
