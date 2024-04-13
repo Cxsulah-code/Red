@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Rainbow Tunnel</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    var cvs;
+    var ctx;
+    window.onload = function () {
+      cvs = document.querySelector("canvas");
+      ctx = cvs.getContext("2d");
+      cvs.width = innerWidth;
+      cvs.height = innerHeight;
+      animate();
+    };
+    function animate() {
+      ctx.fillStyle = "rbga(0, 0, 0, 0.02)";
+      ctx.fillRect(0, 0, cvs.width, cvs.height);
+      const t = Date.now() / 7000;
+      const m = 108;
+      for (var i = 0; i < m; i++) {
+        const a = Math.PI * 5 * i/ m;
+        const b = Math.PI * 2 * i / m;
+        ctx.lineWidth = Math.pow(Math.sin(b - 12 * t), 3);
+        ctx.strokeStyle = `hsla(${t+b}rad, 50%, 50%, 0.8)`;
+        poly(cvs.width / 2 + 20 * Math.cos(18 * t + a),
+          cvs.height / 2 + 20 * Math.sin(11 * t + a),
+          2.2 * i, 10, t + b);
+      }
+      requestAnimationFrame(animate);
+    }
+    function poly (xc, yc, r, n, a0) {
+      ctx.beginPath();
+      for (var i = 0; i < n; i++) {
+        const a = Math.PI * 2 * i / n + a0;
+        const x = xc + r * Math.cos(a);
+        const y = yc + r * Math.sin(a);
+        ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>

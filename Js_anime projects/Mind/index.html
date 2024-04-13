@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  .....
+</head>
+<body bgcolor="black">
+  <canvas id="canv"></canvas>
+  <script>
+    let c = document.getElementById('canv');
+    let ctx = c.getContext('2d');
+    let w = c.width = window.innerWidth;
+    let h = c.height = window.innerHeight;
+
+    F = 0;
+    u = 0;
+
+    function draw() {
+      F++;
+      ctx.fillStyle = 'hsla(239, 95%, 5%, 0.9)';
+      ctx.fillRect(0, 0, w, h);
+      for (i = 50; i--;) {
+        t = F / 20 + i * 0.120;
+        ctx.fillStyle = col(u, 1);
+
+        E(50 + i *Math.cos(t), 40%i*Math.sin(t));
+        E(40 + i *Math.cos(t), 20%i*Math.sin(t));
+        E(20 + i *Math.sin(t), 80%i*Math.cos(t));
+        E(10 + i *Math.sin(t), 70%i*Math.cos(t));
+      }
+      window.requestAnimationFrame(draw);
+    };
+    function E(a, b) {
+      G(a, b);
+      G(-a, b);
+      G(-a, -b);
+      G(a, -b);
+      G(b, -a);
+      G(-b, -a);
+      G(-b, a);
+      G(b, a);
+    }
+    function col(a, b) {
+      return `hsla(${(Math.sin(t)+2) * 150}, 100%, 50%, 1)`;
+    }
+    function G(a, b) {
+      ctx.beginPath();
+      ctx.arc(w/2 + a, h/2 + b, 1, 0, 2 * Math.PI, false);
+      ctx.closePath();
+      ctx.fill();
+    }
+    window.addEventListener('resize', ()=> {
+      c.width = w = window.innerWidth;
+      c.height = h = window.innerHeight;
+    }, false);
+    draw();
+
+  </script>
+</body>
+</html>
