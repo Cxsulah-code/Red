@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #333333;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      height: 100vh;
+      place-items: center;
+    }
+    .star {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 78% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      position: relative;
+      animation: shinning 2s infinite;
+    }
+
+    @keyframes shinning {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        box-shadow: 0 0 10px yellow;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="star"></div>
+</body>
+</html>
