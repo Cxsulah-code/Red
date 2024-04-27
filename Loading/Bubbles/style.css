@@ -3,7 +3,7 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle, #dff, #00f0ff4d);
+  background: radial-gradient(circle, #dff, #dfd, #09ffd4);
 }
 .box {
   height: 90px;
@@ -14,8 +14,8 @@ body {
 }
 
 #bubbles {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   outline: 1px black solid;
   animation: in-out 2.5s infinite ease-in-out;
@@ -26,9 +26,9 @@ body {
   content: "";
   display: block;
   z-index: 2;
-  height: 20px;
-  width: 20px;
-  background: #ffffff80
+  height: 22px;
+  width: 22px;
+  background: #ffff80
   border-radius: 50%;
   transform: translate(4px, 3px);
 }
@@ -59,7 +59,7 @@ body {
 
 @keyframes in-out {
   50% {
-    scale: 1.5;
-    transform: translate(0 -45px);
+    scale: 0.9;
+    transform: translate(0, -45px);
   }
 }

@@ -1,5 +1,5 @@
 body {
-  background: radial-gradient( #ddd, #000);
+  background: radial-gradient( #ffd, #000);
 }
 #main-container {
   justify-content: center;
@@ -37,7 +37,7 @@ body {
   border-radius: 50% 50% 20% 20%;
   z-index: 3;
   height: 30%;
-  width: 14.8%;
+  width: 15.0%;
   background: linear-gradient(#ff0, #fe6 80%, transparent);
   box-shadow: 0px -5px 7px 0px orangered;
   transform-origin: bottom;
