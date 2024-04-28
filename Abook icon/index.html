@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .root {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon {
+      height: 33px;
+      width: 39px;
+      scale: 3;
+      background-repeat: no-repeat;
+      background-image: url('https://www.typetheword.site/bible.svg');
+      background-position: -741px 0;
+    }
+    .icon:hover {
+      animation: bibleAnimation 1s steps(19) forwards;
+    }
+    @keyframes bibleAnimation {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position:-741px 0;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div class="icon"></div>
+  </div>
+</body>
+</html>
