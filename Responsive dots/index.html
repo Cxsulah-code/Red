@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      place-items: center;
+      display: grid;
+      background: #000;
+    }
+    body:hover {
+      background: #222;
+    }
+    nav {
+      --size: 30px;
+      --gap: 10px;
+      container: dotnav / size;
+      width: 50vw;
+      height: 15vh;
+      overflow: hidden;
+      resize: both;
+      outline: 2px dotted cyan;
+    }
+    ol {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--gap);
+      gap: var(--gap);
+      font-size: 0;
+      list-style: none;
+    }
+    li {
+      border-radius: 50cqh;
+      flex: 0 auto;
+      background: orangered;
+      transition: flex 300ms;
+    }
+    li:has(input:checked) {
+      flex: 1 auto;
+    }
+    label {
+      display: inline-block;
+      line-height: 1em;
+      font-size: var(--size);
+      max-width: 1em;
+    }
+    label:not(:has(input:checked)) {
+      cursor: pointer;
+    }
+    input {
+      visibility: hidden;
+    }
+    @container dotnav (aspect-ratio < 1) {
+      ol {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ol>
+      <li>
+        <label for="1"><input type="radio" id="1" value="1" name="1"></label>
+      </li>
+      <li>
+        <label for="2"><input type="radio" id="2" value="2" name="1"></label>
+      </li>
+      <li>
+        <label for="3"><input type="radio" id="3" value="3" name="1" /></label>
+    </li>
+    <li>
+      <label for="4"><input type="radio" id="4" value="4" name="1" checked /></label>
+  </li>
+</ol>
+</nav>
+</body>
+</html>
