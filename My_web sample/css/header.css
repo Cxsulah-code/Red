@@ -8,29 +8,33 @@ header {
   height: 8vh;
   width: 100%;
 }
+#container {
+  justify-content: flex-end;
+}
 
 #nav {
   width: 80%;
   height: 2vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  justify-content: center;
-  padding: 3px;
+  justify-content: space-evenly;
+  padding: 2px;
+  margin: 0 auto;
 }
 
 ul li {
-  margin: 3px 0;
+  margin: 2px 0;
   position: relative;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #ff0;
+  border-radius: 3px;
   overflow: hidden;
+  list-style: none;
+  width: 70px;
+  align-items: center;
 }
 ul li a {
   display: block;
-  padding: 5px 8px;
-  color: #fff;
+  padding: 5px;
   text-decoration: none;
   font-size: 5px;
   font-weight: 500;
@@ -43,7 +47,7 @@ ul li::before {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 8px;
+  width: 5px;
   background-color: #f0f;
   transition: 0.3s all ease-in-out;
 }

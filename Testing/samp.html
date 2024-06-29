@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Input box</title>
+  <style>
+    ###
+  </style>
+</head>
+<body>
+  <div>
+    Sulah's code reflection
+  </div>
+  <input type="text">
+
+  <div>
+    <marquee
+      bgcolor="cyan"
+      behavior=""
+      direction="left">
+      <h3>I Love Jesus. He is my very good friend of all times amen!!</h3>
+    </marquee>
+  </div>
+  <script>
+    let text = document.querySelector("div"),
+    input = document.querySelector("input");
+
+    input.addEventListener("input", () => {
+      text.style.color = input.value;
+      text.style.fontSize = input.value;
+    });
+  </script>
+</body>
+</html>
